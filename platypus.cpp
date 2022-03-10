@@ -8,7 +8,7 @@
 #include <fstream>
 using namespace std;
 
-Platypus()
+Platypus::Platypus()
 {
     weight = 0;
     age = 0;
@@ -18,7 +18,7 @@ Platypus()
     mutant = false;
 }
 
-Platypus(float lbs, short yrs, string nam, char gen)
+Platypus::Platypus(float lbs, short yrs, string nam, char gen)
 {
     weight = lbs;
     age = yrs;
