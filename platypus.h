@@ -29,7 +29,11 @@ public:
     friend void printPlatypus(Platypus);
     bool operator > (Platypus); // operator calls the first platypus object and the second is passed through the parameters comparing weight with fight
                                 // ratio.
-    void hatchPlatypus(Platypus);
+    void hatchPlatypus();
+    //helper function to generate gender and returns it to the hatchPlatypus
+    char generateGender();
+    string generateName();
+    float generateWeight();
 
 private:
     float weight;
