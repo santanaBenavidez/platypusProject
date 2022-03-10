@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
+#include <fstream>
 using namespace std;
 
 Platypus()
