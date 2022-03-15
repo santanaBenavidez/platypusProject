@@ -46,7 +46,8 @@ void Platypus::platypusEat()
     //Working function!
 }
 
-void Platypus::hatchPlatypus()
+void Platypus::hatchPlatypus()//Hatch Function that defaults status, mutant, and age values, sets gender to result of generateGender, 
+                               //sets name to generate name, and sets weight to generate weight, then outputs the passed in values
 {
     status = true;
     mutant = false;
@@ -59,7 +60,7 @@ void Platypus::hatchPlatypus()
     cout << weight << endl;
 }
 
-char Platypus::generateGender()
+char Platypus::generateGender() //Randomly generates a gender and returns it
 {
     char newGen;
     int stork;
@@ -75,7 +76,7 @@ char Platypus::generateGender()
     return gender;
 }
 
-string Platypus::generateName()
+string Platypus::generateName() //checks result of generate gender and uses that to randomly select a name from the appropriate file
 {
     string fname;
     string line;
@@ -117,7 +118,7 @@ string Platypus::generateName()
     return name;
 }
 
-float Platypus::generateWeight()
+float Platypus::generateWeight() //randomly generates a weight within the range of .01 to 1 lbs for a newborn platypus
 {
     int randomNumber = rand() % 10 + 1;
     int num = 10;
