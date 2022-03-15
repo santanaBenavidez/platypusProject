@@ -1,0 +1,19 @@
+// Age function increments the given Platypus' age, generates 2 
+// random numbers 1-100, gives a 2% chance of becoming a mutant
+// each year, and a variable chance of dying based off weight
+// Author: Jonathan Hawes
+
+void Platypus::ageMe() // I don't think we have to import variables? not sure
+{                      // how it will be used, so feel free to import Platypus
+    srand(time(NULL)); // or the individual variables if you want.
+    age++;
+
+    int randomNumber1 = rand() % 100 + 1;
+    int randomNumber2 = rand() % 100 + 1;
+
+    if(randomNumber1 <= 2)
+        mutant = true;
+    if(randomNumber2 <= weight*10)
+        status = false;
+    return;
+}
