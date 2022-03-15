@@ -1,3 +1,7 @@
+// Prints the details of a given Platypus line by line, converts boolean
+// into string so that it displays in a way that makes sense.
+// Author: Jonathan Hawes
+
 void printPlatypus(Platypus p1)
 {
     string stat;
