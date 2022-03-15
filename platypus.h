@@ -18,22 +18,23 @@ public:
     void setStatus(bool alive) { status = alive; } //inline function that sets status to alive
     void setMutant(bool mut) { mutant = mut; } //inline function that sets mutant to mut
 
-    float getWeight() { return weight; } //
-    short getAge() { return age; }
-    string getName() { return name; }
-    char getGender() { return gender; }
-    bool getStatus() { return status; }
-    bool getMutant() { return mutant; }
+    float getWeight() { return weight; } //Accessor function that return weight 
+    short getAge() { return age; }//Accessor function that returns age
+    string getName() { return name; }//Accessor function that returns name
+    char getGender() { return gender; }//Accessor function that returns gender
+    bool getStatus() { return status; }//Accessor function that returns status
+    bool getMutant() { return mutant; }//Accessor function that return mutant
 
 
-    friend void printPlatypus(Platypus);
+    friend void printPlatypus(Platypus);//friend function that prints all the values of the Platypus class
     bool operator > (Platypus); // operator calls the first platypus object and the second is passed through the parameters comparing weight with fight
                                 // ratio.
-    void hatchPlatypus();
+    void hatchPlatypus();//Member function that hatches a new platypus with defaulted age, alive, and mutant values
+                        //and sets gender, name, and weight to passed in values
     void platypusEat();
-    char generateGender();
-    float generateWeight();
-    string generateName();
+    char generateGender();//randomly generates gender with a 50% chance of male or female
+    float generateWeight();//randomly generates weight within a range of 0.1 to 1.0 pounds
+    string generateName();//randomly selects a name according the result of generateGender from list of names
 
 private:
     float weight;
