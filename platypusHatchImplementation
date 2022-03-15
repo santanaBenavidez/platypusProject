@@ -35,10 +35,10 @@ void Platypus::hatchPlatypus()
     mutant = false;
     age = 0;
     weight = generateWeight();
-    name = generateName();
     gender = generateGender();
-    cout << name << endl;
+    name = generateName();
     cout << gender << endl;
+    cout << name << endl;
     cout << weight << endl;
 }
 
