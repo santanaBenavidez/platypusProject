@@ -126,3 +126,52 @@ float Platypus::generateWeight()
 
     return weight;
 }
+
+void Platypus::ageMe() // I don't think we have to import variables? not sure
+{                      // how it will be used, so feel free to import a Platypus
+    srand(time(NULL)); // object or the individual variables if you want. 
+    age++;
+
+    int randomNumber1 = rand() % 99 + 1;
+    int randomNumber2 = rand() % 99 + 1;
+
+    if(randomNumber1 <= 2)
+        mutant = true;
+    if(randomNumber2 <= weight*10)
+        status = false;
+    return;
+}
+
+bool Platypus::operator > (Platypus p2)
+{
+    srand(time(NULL));
+    int randomNumber = rand() % 99 + 1;
+
+    return ( randomNumber > (this->weight)/(p2.weight)*50 );
+}
+
+void printPlatypus(Platypus p1)
+{
+    string stat;
+    string mut;
+
+    if(p1.status == 1)
+        stat = "Alive";
+    else if (p1.status == 0)
+        stat = "Dead";
+
+    if(p1.mutant == 1)
+        mut = "Mutant";
+    else if (p1.mutant == 0)
+        mut = "Not Mutant";
+
+    cout << "Platypus Details\n---------------\n";
+    cout << "Name: " << p1.name << endl;
+    cout << "Age: " << p1.age << endl;
+    cout << "Weight: " << p1.weight << endl;
+    cout << "Gender: " << p1.gender << endl;
+    cout << "Status: " << stat << endl;
+    cout << "Mutant?: " << mut << endl << endl;
+
+    return;
+}
