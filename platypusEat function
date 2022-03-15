@@ -1,0 +1,18 @@
+
+void Platypus::platypusEat()
+{
+    int conversionValue;
+    int decimalValue;
+    float percentIncrease;
+    conversionValue = rand() % 5 + 1;
+    decimalValue = rand() % 100 + 1000;
+    percentIncrease = static_cast<float>(conversionValue) / decimalValue;
+    if (status == true)
+    {
+        weight = (weight + (weight * percentIncrease));
+
+    } else
+
+    return;
+    //Working function!
+}
