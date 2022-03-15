@@ -1,4 +1,12 @@
 //Implementation file
+/*
+ Filename: platypus.cpp
+ Summary: This is a program where the user should be able to set a platypus and use certain class member functions
+ to manipulate its values.
+ Authors: Madison Bartel-Muraski, Santana Benavidez, Jonathan Hawes
+ Date: 3/15/2022
+*/
+
 #include "platypus.h"
 #include <iostream>
 #include <string>
@@ -13,9 +21,9 @@ Platypus::Platypus()
     weight = 0;
     age = 0;
     name = "NULL";
-    gender = 'N';
+    gender = 'n';
     status = false;
-    mutant = false;
+    mutant = true;
 }
 
 Platypus::Platypus(float lbs, short yrs, string nam, char gen)
@@ -39,15 +47,12 @@ void Platypus::platypusEat()
     if (status == true)
     {
         weight = (weight + (weight * percentIncrease));
-        cout << weight << endl;
     } else
 
     return;
-    //Working function!
 }
 
-void Platypus::hatchPlatypus()//Hatch Function that defaults status, mutant, and age values, sets gender to result of generateGender, 
-                               //sets name to generate name, and sets weight to generate weight, then outputs the passed in values
+void Platypus::hatchPlatypus()
 {
     status = true;
     mutant = false;
@@ -55,12 +60,9 @@ void Platypus::hatchPlatypus()//Hatch Function that defaults status, mutant, and
     gender = generateGender();
     name = generateName();
     weight = generateWeight();
-    cout << name << endl;
-    cout << gender << endl;
-    cout << weight << endl;
 }
 
-char Platypus::generateGender() //Randomly generates a gender and returns it
+char Platypus::generateGender()
 {
     char newGen;
     int stork;
@@ -76,7 +78,7 @@ char Platypus::generateGender() //Randomly generates a gender and returns it
     return gender;
 }
 
-string Platypus::generateName() //checks result of generate gender and uses that to randomly select a name from the appropriate file
+string Platypus::generateName()
 {
     string fname;
     string line;
@@ -86,7 +88,7 @@ string Platypus::generateName() //checks result of generate gender and uses that
     if(generateGender() == 'm')
     {
         fin.open("m_names.txt");
-        random = rand() % 50;
+        random = rand() % 50 + 1;
 
         while(getline(fin, line))
         {
@@ -101,7 +103,7 @@ string Platypus::generateName() //checks result of generate gender and uses that
     }else if(generateGender() == 'f')
     {
         fin.open("f_names.txt");
-        random = rand() % 50;
+        random = rand() % 50 + 1;
 
         while(getline(fin, line))
         {
@@ -118,7 +120,7 @@ string Platypus::generateName() //checks result of generate gender and uses that
     return name;
 }
 
-float Platypus::generateWeight() //randomly generates a weight within the range of .01 to 1 lbs for a newborn platypus
+float Platypus::generateWeight()
 {
     int randomNumber = rand() % 10 + 1;
     int num = 10;
@@ -130,11 +132,11 @@ float Platypus::generateWeight() //randomly generates a weight within the range 
 
 void Platypus::ageMe() // I don't think we have to import variables? not sure
 {                      // how it will be used, so feel free to import a Platypus
-    srand(time(NULL)); // object or the individual variables if you want. 
+    srand(time(NULL)); // object or the individual variables if you want.
     age++;
 
-    int randomNumber1 = rand() % 99 + 1;
-    int randomNumber2 = rand() % 99 + 1;
+    int randomNumber1 = rand() % 100 + 1;
+    int randomNumber2 = rand() % 100 + 1;
 
     if(randomNumber1 <= 2)
         mutant = true;
@@ -161,9 +163,9 @@ void printPlatypus(Platypus p1)
     else if (p1.status == 0)
         stat = "Dead";
 
-    if(p1.mutant == 1)
+    if(p1.mutant == true)
         mut = "Mutant";
-    else if (p1.mutant == 0)
+    else if (p1.mutant == false)
         mut = "Not Mutant";
 
     cout << "Platypus Details\n---------------\n";
@@ -176,3 +178,4 @@ void printPlatypus(Platypus p1)
 
     return;
 }
+
