@@ -1,5 +1,6 @@
 //Hatch Function that defaults status, mutant, and age values, sets gender to result of generateGender, 
 //sets name to generate name, and sets weight to generate weight, then outputs the passed in values
+//Author: Santana Benavidez
 
 void Platypus::hatchPlatypus()
 {
