@@ -1,0 +1,83 @@
+//Hatch Function that defaults status, mutant, and age values, sets gender to result of generateGender, 
+//sets name to generate name, and sets weight to generate weight, then outputs the passed in values
+
+void Platypus::hatchPlatypus()
+{
+    status = true;
+    mutant = false;
+    age = 0;
+    gender = generateGender();
+    name = generateName();
+    weight = generateWeight();
+    cout << name << endl;
+    cout << gender << endl;
+    cout << weight << endl;
+}
+
+char Platypus::generateGender()
+{
+    char newGen;
+    int stork;
+    stork = rand() % 2;
+    if(stork == 0)
+    {
+        newGen = 'm';
+    }else if (stork == 1)
+    {
+        newGen = 'f';
+    }
+    gender = newGen;
+    return gender;
+}
+
+string Platypus::generateName()
+{
+    string fname;
+    string line;
+    int random = 0;
+    int lineNum = 0;
+    ifstream fin;
+    if(generateGender() == 'm')
+    {
+        fin.open("m_names.txt");
+        random = rand() % 50;
+
+        while(getline(fin, line))
+        {
+            ++lineNum;
+
+        if(lineNum == random)
+        {
+            name = line;
+        }
+    }
+        fin.close();
+    }else if(generateGender() == 'f')
+    {
+        fin.open("f_names.txt");
+        random = rand() % 50;
+
+        while(getline(fin, line))
+        {
+            ++lineNum;
+
+        if(lineNum == random)
+        {
+            name = line;
+        }
+
+    }
+        fin.close();
+    }
+    return name;
+}
+
+float Platypus::generateWeight()
+{
+    int randomNumber = rand() % 10 + 1;
+    int num = 10;
+
+    weight = static_cast <float> (randomNumber) / static_cast <float> (num);
+
+    return weight;
+}
