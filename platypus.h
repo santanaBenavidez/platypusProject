@@ -8,17 +8,17 @@ class Platypus
 {
 public:
     Platypus(); // this default constructor is called for dead platypus because it sets all values to NULL or 0.
-    Platypus(float, short, string, char);
-    ~Platypus() {}
+    Platypus(float, short, string, char); //overloaded constrctor
+    ~Platypus() {} //destructor
+    //mutators
+    void setWeight(float lbs) { weight = lbs; } //inline function that sets weight to lbs
+    void setAge(short yrs) { age = yrs; } //inline function that sets age to yrs
+    void setString(string nam) { name = nam; } //inline function that sets name to nam 
+    void setGender(char gen) { gender = gen; } //inline function that sets gender to gen
+    void setStatus(bool alive) { status = alive; } //inline function that sets status to alive
+    void setMutant(bool mut) { mutant = mut; } //inline function that sets mutant to mut
 
-    void setWeight(float lbs) { weight = lbs; }
-    void setAge(short yrs) { age = yrs; }
-    void setString(string nam) { name = nam; }
-    void setGender(char gen) { gender = gen; }
-    void setStatus(bool alive) { status = alive; }
-    void setMutant(bool mut) { mutant = mut; }
-
-    float getWeight() { return weight; }
+    float getWeight() { return weight; } //
     short getAge() { return age; }
     string getName() { return name; }
     char getGender() { return gender; }
