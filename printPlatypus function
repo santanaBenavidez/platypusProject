@@ -1,0 +1,25 @@
+void printPlatypus(Platypus p1)
+{
+    string stat;
+    string mut;
+
+    if(p1.status == 1)
+        stat = "Alive";
+    else if (p1.status == 0)
+        stat = "Dead";
+
+    if(p1.mutant == 1)
+        mut = "Mutant";
+    else if (p1.mutant == 0)
+        mut = "Not Mutant";
+
+    cout << "Platypus Details\n---------------\n";
+    cout << "Name: " << p1.name << endl;
+    cout << "Age: " << p1.age << endl;
+    cout << "Weight: " << p1.weight << endl;
+    cout << "Gender: " << p1.gender << endl;
+    cout << "Status: " << stat << endl;
+    cout << "Mutant?: " << mut << endl << endl;
+
+    return;
+}
