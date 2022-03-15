@@ -1,7 +1,11 @@
+// Operator function decides which platypus would win in a fight by comparing
+// the fight ratio and seeing if it's larger than a random number 1-100
+// Author: Jonathan Hawes
+
 bool Platypus::operator > (Platypus p2)
 {
     srand(time(NULL));
-    int randomNumber = rand() % 99 + 1;
+    int randomNumber = rand() % 100 + 1;
 
     return (randomNumber > (this->weight)/(p2.weight)*50);
 }
